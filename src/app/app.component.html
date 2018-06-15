@@ -1,7 +1,7 @@
 
 <ng-container *ngFor="let entry of entries">
   <div ngxEasilyDraggable ngxEasilyDroppable
-       id="{{entry.id}}"
+       [representing]="entry"
        [enableDragImage]="false"
        style="width: 200px; height: 200px" [fireOnDragOver]="true"
        (dropped)="dropped($event)"
