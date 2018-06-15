@@ -11,20 +11,17 @@ export class NgxEasilyDroppableDirective {
 
   /**
    * Fire the (dropped) event already when another element is dragged over this one? Defaults to false.
-   * @type {boolean}
    */
   @Input() fireOnDragOver = false;
 
   /**
    * Entity that's represented by the DOM element. Will be passed to (dropped) event listeners as
    * NgxEasilyDraggableDropElement.droppedOn.representing.
-   * @type {any}
    */
-  @Input() representing = null;
+  @Input() representing: any = null;
 
   /**
    * Event that's fired when another element has been dropped on this one.
-   * @type {EventEmitter<NgxEasilyDraggableDropEvent>}
    */
   @Output() dropped = new EventEmitter<NgxEasilyDraggableDropEvent>();
 
