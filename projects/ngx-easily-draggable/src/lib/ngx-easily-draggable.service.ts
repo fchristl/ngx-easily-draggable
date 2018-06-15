@@ -7,6 +7,7 @@ import {NgxEasilyDraggableElement} from "./ngx-easily-draggable-element";
 export class NgxEasilyDraggableService {
 
   draggedElement?: NgxEasilyDraggableElement = null;
+  dragImage: HTMLImageElement = null;
 
   constructor() { }
 }

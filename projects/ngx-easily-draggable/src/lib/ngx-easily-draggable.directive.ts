@@ -22,13 +22,20 @@ export class NgxEasilyDraggableDirective {
 
   /**
    * How is the visual feedback supposed to look like that represents this operation?
-   * @type {"move"}
    */
   @Input() dropEffect: 'copy' | 'move' | 'link' | 'none' = 'none';
+  private dragImage: HTMLImageElement;
 
   constructor(private elementRef: ElementRef,
               private service: NgxEasilyDraggableService) {
     this.elementRef.nativeElement.draggable = 'true';
+    if (!this.service.dragImage) {
+      this.service.dragImage = document.createElement('img');
+      this.service.dragImage.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+      this.service.dragImage.style.width = '1px';
+      this.service.dragImage.style.height = '1px';
+    }
+    document.body.appendChild(this.service.dragImage);
   }
 
   @HostListener('dragstart', ['$event'])
@@ -38,9 +45,9 @@ export class NgxEasilyDraggableDirective {
       representing: this.representing
     };
     if (!this.enableDragImage) {
-      const dragImage = document.createElement('img');
-      dragImage.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
-      event.dataTransfer.setDragImage(dragImage, 0, 0);
+
+
+      event.dataTransfer.setDragImage(this.service.dragImage, 0, 0);
     }
     event.dataTransfer.effectAllowed = this.dropEffect;
   }

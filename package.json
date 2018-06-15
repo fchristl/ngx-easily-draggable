@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:lib": "ng build --prod ngx-easily-draggable",
+    "build:lib": "ng build --prod ngx-easily-draggable && cp README.md dist/ngx-easily-draggable/",
     "publish:lib": "cd dist/ngx-easily-draggable && npm publish",
     "test": "ng test",
     "lint": "ng lint",
