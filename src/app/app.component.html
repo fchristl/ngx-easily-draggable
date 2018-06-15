@@ -3,7 +3,7 @@
   <div ngxEasilyDraggable ngxEasilyDroppable
        [representing]="entry"
        [enableDragImage]="false"
-       style="width: 200px; height: 200px" [fireOnDragOver]="true"
+       style="width: 200px; height: 200px" [fireDropEventOnDragOver]="true"
        (dropped)="dropped($event)"
        [ngStyle]="{'background': entry.color}">
 

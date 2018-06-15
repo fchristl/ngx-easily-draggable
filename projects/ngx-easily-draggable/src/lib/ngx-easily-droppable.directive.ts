@@ -12,7 +12,7 @@ export class NgxEasilyDroppableDirective {
   /**
    * Fire the (dropped) event already when another element is dragged over this one? Defaults to false.
    */
-  @Input() fireOnDragOver = false;
+  @Input() fireDropEventOnDragOver = false;
 
   /**
    * Entity that's represented by the DOM element. Will be passed to (dropped) event listeners as
@@ -30,7 +30,7 @@ export class NgxEasilyDroppableDirective {
 
   @HostListener('dragover', ['$event']) private dragOver(event: DragEvent) {
     event.preventDefault();
-    if (this.fireOnDragOver) {
+    if (this.fireDropEventOnDragOver) {
       this.fire(this.servive.draggedElement, {
         elementRef: this.elementRef,
         representing: this.representing
