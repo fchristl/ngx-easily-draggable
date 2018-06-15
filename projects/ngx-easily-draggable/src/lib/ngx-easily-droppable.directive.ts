@@ -25,6 +25,7 @@ export class NgxEasilyDroppableDirective {
    */
   @Output() dropped = new EventEmitter<NgxEasilyDraggableDropEvent>();
 
+
   constructor(private servive: NgxEasilyDraggableService, private elementRef: ElementRef) {
   }
 

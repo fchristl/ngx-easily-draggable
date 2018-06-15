@@ -20,6 +20,12 @@ export class NgxEasilyDraggableDirective {
    */
   @Input() representing: any = null;
 
+  /**
+   * How is the visual feedback supposed to look like that represents this operation?
+   * @type {"move"}
+   */
+  @Input() dropEffect: 'copy' | 'move' | 'link' | 'none' = 'none';
+
   constructor(private elementRef: ElementRef,
               private service: NgxEasilyDraggableService) {
     this.elementRef.nativeElement.draggable = 'true';
@@ -32,9 +38,10 @@ export class NgxEasilyDraggableDirective {
       representing: this.representing
     };
     if (!this.enableDragImage) {
-      const dragImage = new Image();
-      dragImage.style.display = 'none';
+      const dragImage = document.createElement('img');
+      dragImage.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
       event.dataTransfer.setDragImage(dragImage, 0, 0);
     }
+    event.dataTransfer.effectAllowed = this.dropEffect;
   }
 }

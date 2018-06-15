@@ -2,7 +2,8 @@
 <ng-container *ngFor="let entry of entries">
   <div ngxEasilyDraggable ngxEasilyDroppable
        [representing]="entry"
-       [enableDragImage]="false"
+       [enableDragImage]="true"
+       [dropEffect]="'none'"
        style="width: 200px; height: 200px" [fireDropEventOnDragOver]="true"
        (dropped)="dropped($event)"
        [ngStyle]="{'background': entry.color}">
