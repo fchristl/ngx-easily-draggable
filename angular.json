@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "ngx-easily-draggable": {
+      "root": "projects/ngx-easily-draggable",
+      "sourceRoot": "projects/ngx-easily-draggable/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-easily-draggable/tsconfig.lib.json",
+            "project": "projects/ngx-easily-draggable/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-easily-draggable/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-easily-draggable/src/test.ts",
+            "tsConfig": "projects/ngx-easily-draggable/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-easily-draggable/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-easily-draggable/tsconfig.lib.json",
+              "projects/ngx-easily-draggable/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "draggable"

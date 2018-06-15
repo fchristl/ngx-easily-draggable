@@ -1,0 +1,13 @@
+{
+  "name": "ngx-easily-draggable",
+  "version": "0.0.3",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fchristl/ngx-easily-draggable"
+  },
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  }
+}

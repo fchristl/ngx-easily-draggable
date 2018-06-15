@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-easily-draggable": [
+        "dist/ngx-easily-draggable"
+      ],
+      "ngx-easily-draggable/*": [
+        "dist/ngx-easily-draggable/*"
+      ]
+    }
   }
 }
