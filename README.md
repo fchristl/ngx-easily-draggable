@@ -4,7 +4,18 @@ ngx-easily-draggable is a small library that makes developing drag-and-drop comp
 
 ## Installation
 
-In your Angular project, run `npm install ngx-easily-draggable --save`.
+In your Angular project, run `npm install ngx-easily-draggable --save` and import the `NgxEasilyDraggableModule`
+into your `AppModule`:
+
+```typescript
+import { NgxEasilyDraggableModule } from 'ngx-easily-draggable';
+// ...
+  imports: [
+    NgxEasilyDraggableModule,
+    // ...
+  ],
+``` 
+    
 
 ## Usage
 
