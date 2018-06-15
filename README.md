@@ -24,13 +24,22 @@ This library knows two kinds of elements:
 1. draggable elements (that have an `ngxEasilyDraggable` directive set) and
 2. elements that draggable elements can be dropped on (that have an `ngxEasilyDroppable` directive set).
 
-### Representing Entities
+### Elements Representing Entities
 
-Every such element represents an entity: Either an entity that's being dragged or an entity that another one
-is dropped on.
+Let's assume you build up a UI dynamically based on an array. You iterate over that array
+using `*ngFor`. For each element of the array, you generate a `div` element. You now want to allow re-ordering
+the array elements by drag and drop.
 
-This representing entity can be any object and can be set using the `representing` attribute. When a drop
+For cases like that, it's highly useful to know which original array element the user wanted to drag/drop rather
+than just knowing which `div`. 
+
+To support cases like that, ngx-easily-draggable uses so called **representing entities**. 
+
+A representing entity can be any object (e.g. an element from your array). It can be set using the `representing` attribute. When a drop
 event occurs, this representing entity will be passed along to the event listeners.
+
+Like this, you don't need to painfully find the underlying array element which belongs to a `div` that was dragged.
+Instead, you just get the element delivered in your drop event right away.
 
 For example:
 
