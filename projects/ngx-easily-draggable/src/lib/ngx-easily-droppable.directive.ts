@@ -13,6 +13,12 @@ export class NgxEasilyDroppableDirective {
    * Fire the (dropped) event already when another element is dragged over this one? Defaults to false.
    */
   @Input() fireDropEventOnDragOver = false;
+  @Input() set dropEffect(value) {
+    if (value === 'none' && this.fireDropEventOnDragOver) {
+      console.warn('NgxEasilyDraggable: If you have a "none" drop effect combined with "fireDropEventonDragOver", drag and drop will not work. Please' +
+                    'either pick another drop effect or disable "fireDropEventOnDragOver"');
+    }
+  }
 
   /**
    * Entity that's represented by the DOM element. Will be passed to (dropped) event listeners as
