@@ -1,8 +1,16 @@
 {
   "name": "ngx-easily-draggable",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "license": "BSD-3-Clause",
-  "keywords": ["angular", "drag and drop", "drag & drop", "drag", "drop", "sort", "order"],
+  "keywords": [
+    "angular",
+    "drag and drop",
+    "drag & drop",
+    "drag",
+    "drop",
+    "sort",
+    "order"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/fchristl/ngx-easily-draggable"
